@@ -46,4 +46,8 @@ class Fetch {
     }
   }
 
+  public static function setup() {
+    return new static();
+  }
+
 }
