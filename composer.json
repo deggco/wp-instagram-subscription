@@ -1,0 +1,25 @@
+{
+  "name": "wp-instagram-subscription/wp-instagram-subscription",
+  "type": "app",
+  "description": "Add an Instagram subscription to Wordpress",
+  "keywords": ["instagram"],
+  "homepage": "https://github.com/travisscheidegger/wp-instagram-subscription",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Travis Scheidegger",
+      "email": "t@degg.co",
+      "homepage": "http://degg.co",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0",
+    "php-instagram-api/php-instagram-api": "*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Degg": "."
+    }
+  }
+}
