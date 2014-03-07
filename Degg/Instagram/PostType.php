@@ -48,4 +48,8 @@ class PostType {
     register_post_type('degg_instagram', $args);
   }
 
+  public static function setup() {
+    return new static();
+  }
+
 }
