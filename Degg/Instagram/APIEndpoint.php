@@ -4,9 +4,9 @@ namespace Degg\Instagram;
 
 class APIEndpoint {
 
-  $client_id;
+  public $client_id;
 
-  $tags;
+  public $tags;
 
   public function __construct($client_id, $tag) {
     $this->client_id = $client_id;
