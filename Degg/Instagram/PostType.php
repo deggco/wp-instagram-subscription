@@ -39,7 +39,7 @@ class PostType {
       'query_var'           => true,
       'rewrite'             => array('slug' => 'instagram'),
       'capability_type'     => 'post',
-      'has_archive'         => false,
+      'has_archive'         => true,
       'hierarchical'        => false,
       'menu_position'       => 22,
       'supports'            => array('title', 'thumbnail', 'editor'),
