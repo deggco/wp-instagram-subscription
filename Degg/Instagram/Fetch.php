@@ -18,7 +18,7 @@ class Fetch {
     $tag = $instagram->getTag($tag);
     $media = $tag->getMedia(array('min_tag_id' => $min_tag_id));
 
-    update_option("last_instagram_tag_{$tag}_id", $media->getNextMinId());
+    update_option("last_instagram_tag_{$tag}_id", $media->getNextMaxTagId());
     foreach ($media as $m) {
       $query = "SELECT posts.* FROM ".$wpdb->posts." AS posts
         INNER JOIN ".$wpdb->postmeta." AS wpostmeta ON wpostmeta.post_id = posts.ID
