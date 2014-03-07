@@ -8,9 +8,9 @@ class APIEndpoint {
 
   $tags;
 
-  public function __construct($client_id, $tags) {
+  public function __construct($client_id, $tag) {
     $this->client_id = $client_id;
-    $this->tags = $tags;
+    $this->tag = $tag;
     add_filter('query_vars', array($this, 'add_query_vars'), 0);
     add_action('parse_request', array($this, 'sniff_requests'), 0);
     add_action('init', array($this, 'add_endpoint'), 0);
@@ -45,7 +45,7 @@ class APIEndpoint {
       Header('Content-Type: text/plain');
       $this->send_text('200 OK', $_GET['hub_challenge']);
     } else {
-      wp_schedule_single_event(time(), 'degg_instagram_fetch', array($this->client_id, $this->tags));
+      wp_schedule_single_event(time(), 'degg_instagram_fetch', array($this->client_id, $this->tag));
       spawn_cron(time());
       $this->send_text('200 OK', "OK");
     }
@@ -61,8 +61,8 @@ class APIEndpoint {
     echo $content;
   }
 
-  public static function create($client_id, $tags) {
-    return new static($client_id, $tags);
+  public static function create($client_id, $tag) {
+    return new static($client_id, $tag);
   }
 
 }
