@@ -1,6 +1,6 @@
 {
   "name": "travisscheidegger/wp-instagram-subscription",
-  "type": "package",
+  "type": "library",
   "description": "Add an Instagram subscription to Wordpress",
   "keywords": ["instagram"],
   "homepage": "https://github.com/travisscheidegger/wp-instagram-subscription",
